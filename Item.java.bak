@@ -17,15 +17,17 @@ this.stock = stock;
 	System.out.println("Sold: "+sold);
 	}
 	
-	public void buy() {
-    if (stock > 0) {
-        sold++;
-        stock--;
-        System.out.println("Thank You For Shopping");
-    } else {
+	public void buy(){
+    sold++;
+    stock--;
+    if (stock < 0) { 
         System.out.println("We are out of stock");
+        stock = 0; 
+    } else {
+         System.out.println("We are out of stock");
     }
 }
+    
 	
     public void Return(){
     if (sold > 0){
