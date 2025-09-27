@@ -1,0 +1,39 @@
+class Item {
+protected String item_name;
+protected double price;
+protected int sold ;
+protected int stock;
+
+public Item(String item_name, double price, int stock){
+this.item_name = item_name;
+this.price = price;
+sold = 0;
+this.stock = stock;  
+}  
+	public void logDetails(){
+	System.out.println("Item name: "+item_name);
+	System.out.println("Price: "+price);
+	System.out.println("Stock: "+stock);
+	System.out.println("Sold: "+sold);
+	}
+	
+	public void buy() {
+    if (stock > 0) {
+        sold++;
+        stock--;
+        System.out.println("Thank You For Shopping");
+    } else {
+        System.out.println("We are out of stock");
+    }
+}
+	
+    public void Return(){
+    if (sold > 0){
+        stock++;
+        sold--;
+        System.out.println("Thank you for returning the product.");
+    } else {
+        System.out.println("You have not purchased this item.");
+    }
+}
+}
